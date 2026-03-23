@@ -5,6 +5,7 @@ import { serveStatic } from "./static";
 import { createServer } from "http";
 import { Sentry } from "./sentry";
 import { setupClerkAuth } from "./clerkAuth";
+import { setupClerkProxy } from "./clerkProxy";
 
 process.on("unhandledRejection", (reason: any) => {
   console.error("[process] Unhandled rejection:", reason);
@@ -88,6 +89,9 @@ app.use((req, res, next) => {
 (async () => {
   // Health check endpoint — must be before Clerk middleware
   app.get("/health", (_req, res) => res.status(200).json({ status: "ok" }));
+
+  // Clerk proxy — must be before setupClerkAuth so these routes are not auth-protected
+  setupClerkProxy(app);
 
   // Setup Clerk auth middleware
   setupClerkAuth(app);
