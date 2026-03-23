@@ -1,0 +1,145 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: 'DM Sans', sans-serif;
+  --font-heading: 'Outfit', sans-serif;
+  
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+:root {
+  /* Foodie Gold Theme - Light Mode */
+  --background: 30 20% 98%;
+  --foreground: 20 10% 15%; /* Deep Charcoal */
+
+  --card: 0 0% 100%;
+  --card-foreground: 20 10% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 10% 15%;
+
+  --primary: 35 95% 55%; /* Rich Gold/Orange */
+  --primary-foreground: 20 10% 10%;
+
+  --secondary: 30 20% 92%; /* Warm Gray */
+  --secondary-foreground: 20 10% 15%;
+
+  --muted: 30 10% 94%;
+  --muted-foreground: 20 5% 45%;
+
+  --accent: 35 95% 55%;
+  --accent-foreground: 20 10% 10%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+
+  --border: 30 10% 90%;
+  --input: 30 10% 90%;
+  --ring: 35 95% 55%;
+  
+  --radius: 0.75rem;
+
+  --sidebar: 30 20% 98%;
+  --sidebar-foreground: 20 10% 15%;
+  --sidebar-primary: 35 95% 55%;
+  --sidebar-primary-foreground: 20 10% 10%;
+  --sidebar-accent: 30 20% 92%;
+  --sidebar-accent-foreground: 20 10% 15%;
+  --sidebar-border: 30 10% 90%;
+  --sidebar-ring: 35 95% 55%;
+}
+
+.dark {
+  /* Foodie Gold Theme - Dark Mode */
+  --background: 20 10% 10%;
+  --foreground: 30 20% 98%;
+
+  --card: 20 10% 13%;
+  --card-foreground: 30 20% 98%;
+
+  --popover: 20 10% 13%;
+  --popover-foreground: 30 20% 98%;
+
+  --primary: 35 95% 55%;
+  --primary-foreground: 20 10% 10%;
+
+  --secondary: 20 10% 18%;
+  --secondary-foreground: 30 20% 98%;
+
+  --muted: 20 10% 18%;
+  --muted-foreground: 30 10% 65%;
+
+  --accent: 35 95% 55%;
+  --accent-foreground: 20 10% 10%;
+
+  --destructive: 0 62% 30%;
+  --destructive-foreground: 30 20% 98%;
+
+  --border: 20 10% 18%;
+  --input: 20 10% 18%;
+  --ring: 35 95% 55%;
+  
+  --sidebar: 20 10% 10%;
+  --sidebar-foreground: 30 20% 98%;
+  --sidebar-primary: 35 95% 55%;
+  --sidebar-primary-foreground: 20 10% 10%;
+  --sidebar-accent: 20 10% 18%;
+  --sidebar-accent-foreground: 30 20% 98%;
+  --sidebar-border: 20 10% 18%;
+  --sidebar-ring: 35 95% 55%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
